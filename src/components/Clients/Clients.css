@@ -1,0 +1,59 @@
+.logo-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-marquee {
+  display: flex;
+  width: max-content; /* important for endless effect */
+  animation: scrollMarquee 30s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .logo-marquee {
+    animation: scrollMarquee 25s linear infinite;
+  }
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 180px;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ⛔ Don't apply transform scale to the scrolling container itself */
+.logo-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* .logo-item img {
+  max-height: 200px;
+  max-width: 200px;
+  object-fit: contain;
+  pointer-events: none;
+} */
+
+.logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Only -50% because we doubled the logos */
+  }
+}

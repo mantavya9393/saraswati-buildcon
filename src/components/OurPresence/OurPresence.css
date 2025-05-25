@@ -1,0 +1,20 @@
+/* Marker drop-in animation */
+.leaflet-marker-icon.marker-drop {
+  animation: drop-in 0.5s ease-out forwards;
+}
+
+@keyframes drop-in {
+  0% {
+    transform: translateY(-100px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hide markers until animation ends */
+.marker-hidden {
+  opacity: 0 !important;
+}
